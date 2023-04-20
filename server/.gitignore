@@ -1,0 +1,72 @@
+# Binaries for programs and plugins
+.env
+*.exe
+*.exe~
+*.apk
+*.ipa
+*.dll
+*.so
+*.dylib
+*.tmp
+bin
+*.wasm
+*.log
+*.lock
+*.[oa]
+*.pyc
+*.txt
+
+#editor and system files
+.idea
+.vscode
+.vs
+.project
+*.sw?
+~*
+.DS_Store
+Thumbs.db
+*.out
+*.db
+*.sqlite*
+
+# COMPRESS FILES
+*.7z
+*.zip
+*.rar
+*.tar
+*.tar.gz
+*.xz
+*.tgz
+
+
+# log files and runtime files
+**/log
+**/tmp
+*.cache
+test*
+.bin
+temp
+tmp
+build/
+debug/
+release
+debug
+.settings
+nohup.out
+
+# cmake
+CMakeLists.txt.user*
+CMakeFiles
+cmake_install.cmake
+**/Makefile
+CMakeCache*
+cmake-build-debug*
+
+# rust
+target
+Cargo.lock
+**/*.rs.bk
+
+# frontend
+*lock.yaml
+*-lock.*
