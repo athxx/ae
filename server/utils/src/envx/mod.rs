@@ -40,7 +40,7 @@ pub fn env_usize(key: &str) -> usize {
 /// it just for get all prefix 'ox_' environment variables
 /// if necessary just change filter rules
 pub fn env_map() -> HashMap<String, String> {
-    env::vars().filter(|(k, _)| k.len() > 3 && &k[0..3] == "ox_").collect()
+    env::vars().into_iter().filter(|(k, _)| k.len() > 3 && &k[0..3] == "ox_").collect()
 }
 
 pub fn load_env() -> Result<HashMap<String, String>, std::io::Error> {

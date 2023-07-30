@@ -1,0 +1,201 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("db_url")
+
+  // provider = "sqlite"
+  // url      = "file:dev.db"
+
+  // e.x. postgresql
+  // provider = "postgresql"
+  // url      = env("DATABASE_URL") // read from `.env` or environment
+  // url      = "postgresql://USER:PASSWORD@HOST:PORT/DATABASE?KEY1=VALUE&KEY2=VALUE&KEY3=VALUE"
+}
+
+generator client {
+  // Corresponds to the cargo alias created earlier
+  provider        = "cargo prisma"
+  // The location to generate the client. Is relative to the position of the schema
+  output          = "../service/src/prisma.rs"
+  previewFeatures = ["multiSchema"]
+}
+
+// user
+model User {
+  uid      BigInt    @id @default(autoincrement())
+  name     String    @unique @db.VarChar(16)
+  nickname String    @default("") @db.VarChar(32)
+  realname String    @default("") @db.VarChar(32)
+  email    String    @unique @default("") @db.VarChar(120)
+  phone    String    @default("") @db.VarChar(18)
+  bio      String    @default("") @db.VarChar(120)
+  avatar   String    @default("") @db.VarChar(64)
+  state    Int       @default(0)
+  created  BigInt    @default(dbgenerated("extract(epoch from current_timestamp)::integer"))
+  updated  BigInt    @default(dbgenerated("extract(epoch from current_timestamp)::integer"))
+  deleted  BigInt    @default(0)
+  GeoUser  GeoUser[]
+  Shop     Shop[]
+}
+
+// user contacts
+// model UserContacts {
+//   uid        BigInt @id
+//   contactUid BigInt
+//   state      Int    @default(0)
+//   created    BigInt @default(dbgenerated("extract(epoch from current_timestamp)::integer"))
+// }
+
+// user mask
+
+// user auth
+
+// user Cart
+
+// user tags
+
+// ----------------------------------- Shop and Item -----------------------------------
+model Shop {
+  sid         BigInt @id @default(autoincrement())
+  uid         BigInt
+  name        String @db.VarChar(32)
+  description String @default("")
+  state       Int    @default(0)
+  created     BigInt @default(dbgenerated("extract(epoch from current_timestamp)::integer"))
+  updated     BigInt @default(dbgenerated("extract(epoch from current_timestamp)::integer"))
+  deleted     BigInt @default(0)
+  user        User   @relation(fields: [uid], references: [uid], onDelete: Cascade)
+}
+
+// model ShopCart {
+//   uid   BigInt @id
+//   items Json
+// }
+
+// model ItemCategory {
+//   id        Int    @id @default(autoincrement())
+//   parent_id Int
+//   name      String @db.VarChar(60)
+//   img_url   String @db.VarChar(200)
+//   state     Int    @default(0)
+// }
+
+// model Item {
+//   spu      BigInt  @id @default(autoincrement())
+//   name     String
+//   title    String  @db.VarChar(64)
+//   subtitle String  @db.VarChar(200)
+//   detail   String?
+//   tinyimg  String?
+//   price    Float
+//   state    Int     @default(0)
+//   created  BigInt  @default(dbgenerated("extract(epoch from current_timestamp)::integer"))
+//   updated  BigInt  @default(dbgenerated("extract(epoch from current_timestamp)::integer"))
+// }
+
+// model ItemSku {
+//   sku        BigInt  @id @default(autoincrement())
+//   spu        BigInt
+//   stock      Int     @default(0)
+//   attributes String?
+//   price      Float
+// }
+
+// model ItemAttribute {
+//   id        Int    @id @default(autoincrement())
+//   attr_name String @db.VarChar(32)
+// }
+
+// ----------------------------------- Geo -----------------------------------
+model GeoUser {
+  uid  BigInt               @id @default(autoincrement())
+  pt   Unsupported("point")
+  user User                 @relation(fields: [uid], references: [uid], onDelete: Cascade)
+  //@@index([pt], type: Gist) // create index IdxGeoUserPt on GeoUser using gist(pt) with (buffering=on);
+}
+
+model GeoShop {
+  sid BigInt               @id @default(autoincrement())
+  pt  Unsupported("point")
+
+  //@@index([pt], type: Gist) // CREATE INDEX IdxGeoShopPt ON GeoStore USING gist(pt) WITH (buffering=on);
+}
+
+// model GeoJob {
+//   sid BigInt               @id @default(autoincrement())
+//   pt  Unsupported("point")
+
+//   //@@index([pt], type: Gist) // CREATE INDEX IdxGeoShopPt ON GeoStore USING gist(pt) WITH (buffering=on);
+// }
+
+// ----------------------------------- IM -----------------------------------
+
+// model ImCall {
+//   id Int @id @default(autoincrement())
+// }
+
+// model ImUser {
+//   uid    BigInt @id
+//   number String @default("")
+// }
+
+// model ImGroup {
+//   id Int @id @default(autoincrement())
+// }
+
+// model ImMoment {
+//   id Int @id @default(autoincrement())
+// }
+
+// model Moments {
+//   id      BigInt  @id @default(autoincrement())
+//   uid     BigInt
+//   content String
+//   created BigInt  @default(dbgenerated("extract(epoch from current_timestamp)::integer"))
+//   isHide  Boolean
+// }
+
+// model News {
+//   id       BigInt               @id @default(autoincrement())
+//   pt       Unsupported("point")
+//   uid      BigInt
+//   title    String               @db.VarChar(64)
+//   subtitle String               @db.VarChar(32)
+//   content  String               @db.Text
+//   state    Int                  @db.SmallInt
+//   created  BigInt               @default(dbgenerated("extract(epoch from current_timestamp)::integer"))
+// }
+
+// ----------------------------------- Ariticle & News -----------------------------------
+
+// ----------------------------------- Meetup -----------------------------------
+// model Meetup {
+//   id BigInt @id @default(autoincrement())
+// }
+
+// ----------------------------------- Jobs -----------------------------------
+// model JobCategory {
+//   id Int @id @default(autoincrement())
+// }
+
+// model JobCompany {
+//   id Int @id @default(autoincrement())
+// }
+
+// model Job {
+//   id BigInt @id @default(autoincrement())
+// }
+
+// ----------------------------------- System -----------------------------------
+// model SysConfig {
+//   k    String @id
+//   v    String
+//   Memo String
+// }
+
+// model SysFeedback {
+//   id      BigInt @id @default(autoincrement())
+//   uid     BigInt
+//   type    String @db.VarChar(64)
+//   content String @db.VarChar(500)
+//   state   Int    @default(0)
+// }

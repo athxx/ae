@@ -1,5 +1,5 @@
 # Binaries for programs and plugins
-.env
+#.env
 *.exe
 *.exe~
 *.apk
@@ -26,8 +26,6 @@ bin
 .DS_Store
 Thumbs.db
 *.out
-*.db
-*.sqlite*
 
 # COMPRESS FILES
 *.7z

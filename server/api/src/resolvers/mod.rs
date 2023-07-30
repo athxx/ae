@@ -1,25 +1,18 @@
-pub mod errors;
-pub mod gql;
+mod errors;
+mod gql;
 
 use axum::{
-    extract::Extension,
     http::{header, Method, StatusCode},
     response::IntoResponse,
     routing::{get, post},
     Json, Router,
 };
 
-use async_graphql_axum::GraphQLSubscription;
-
-use core::service::schema::build_schema;
-
-pub async fn router() -> Router {
-    let schema = build_schema().await;
+pub fn router() -> Router {
     Router::new()
-        .route("/favicon.ico", get(errors::no_content))
+        .route("/", get(errors::ping))
+        .route("/gql", post(errors::ping))
         .route("/ping", get(errors::ping))
-        .route_service("/ws", GraphQLSubscription::new(schema.clone()))
-        .route("/api", get(gql::graphiql).post(gql::graphql_handler))
-        .layer(Extension(schema))
+        .route("/ws", get(errors::ping))
         .fallback(errors::not_found)
 }
