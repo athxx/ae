@@ -1,5 +1,4 @@
 mod errors;
-mod gql;
 
 use axum::{
     http::{header, Method, StatusCode},
@@ -8,7 +7,7 @@ use axum::{
     Json, Router,
 };
 
-pub fn router() -> Router {
+pub async fn router() -> Router {
     Router::new()
         .route("/", get(errors::ping))
         .route("/gql", post(errors::ping))

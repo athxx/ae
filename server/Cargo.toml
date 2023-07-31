@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["api", "admin", "service", "utils", "prisma/prisma-cli"]
+members = ["api", "admin", "core", "utils", "prisma/prisma-cli"]
 
 [workspace.package]
 authors = ["Athan <athan.seal@gmail.com>"]
@@ -27,6 +27,9 @@ axum-server = "*"
 tokio = "*"
 dotenv = "*"
 
+# template render for SSR
+tera = "1"
+
 # encryption and serialization
 aes = "*"
 md5 = "0"
@@ -35,8 +38,6 @@ rand = "0"
 serde = "1"
 serde_json = "1"
 serde_derive = "1"
-async-graphql = "*"
-async-graphql-axum = "*"
 scru128 = "*"
 
 # database configuration
@@ -46,8 +47,8 @@ prisma-client-rust-cli = { git = "https://github.com/Brendonovich/prisma-client-
     "sqlite",
     "postgresql",
     "mysql",
-    "mongodb",
-    "mssql",
+    # "mongodb",
+    # "mssql",
 ] }
 
 # tools
@@ -63,6 +64,7 @@ tower = { version = "0" }
 tower-http = { version = "0", features = ["cors"] }
 xdb = "*"                                           # https://github.com/lionsoul2014/ip2region
 futures = "0"
+
 # validator
 validator = "0"
 validator_derive = "0"
@@ -91,5 +93,5 @@ tracing-subscriber = "0"
 
 #ws
 #futures-channel = "0.3.21"
-#futures-util = { version = "0.3", features = ["sink", "std"] }
+futures-util = "*"
 #tokio-tungstenite = "*"

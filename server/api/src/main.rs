@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 #![allow(unused)]
 
-mod resolvers;
+mod handler;
 
 use axum::{
     http::{header, Method, StatusCode},
@@ -28,7 +28,7 @@ async fn main() {
     // run our app with hyper
     info!("server running on : {}", vars.port_api);
     axum::Server::bind(&vars.port_api.parse().unwrap())
-        .serve(resolvers::router().await.into_make_service())
+        .serve(handler::router().await.into_make_service())
         .await
         .unwrap();
 }
