@@ -25,7 +25,7 @@ axum-extra = "*"
 axum-server = "*"
 #axum-tungstenite="0"
 tokio = "*"
-dotenv = "*"
+dotenvy = "*"
 
 # template render for SSR
 tera = "1"

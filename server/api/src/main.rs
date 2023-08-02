@@ -9,25 +9,20 @@ use axum::{
     routing::{get, post},
     Json, Router,
 };
+
 use log::info;
 use serde::{Deserialize, Serialize};
-pub struct Arg {
-    pub port_api: String,
-    pub port_adm: String,
-}
 
 #[tokio::main]
 async fn main() {
-    let vars = Arg {
-        port_api: String::from("0.0.0.0:3000"),
-        port_adm: String::from("0.0.0.0:3001"),
-    };
+    let cfg = core::common::cfg::get_or_init();
+
     // initialize tracing
     tracing_subscriber::fmt::init();
     //fast_log::init(fast_log::Config::new().console().file("test.log").chan_len(Some(100000))).unwrap();
     // run our app with hyper
-    info!("server running on : {}", vars.port_api);
-    axum::Server::bind(&vars.port_api.parse().unwrap())
+    info!("server running on : {}", cfg.port_api);
+    axum::Server::bind(&cfg.port_api.parse().unwrap())
         .serve(handler::router().await.into_make_service())
         .await
         .unwrap();
