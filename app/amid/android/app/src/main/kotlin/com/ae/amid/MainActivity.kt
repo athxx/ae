@@ -1,4 +1,4 @@
-package com.amid.amid
+package com.ae.amid
 
 import io.flutter.embedding.android.FlutterActivity
 
