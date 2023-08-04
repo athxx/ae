@@ -1,7 +1,9 @@
 use std::sync::OnceLock;
 use utils::envx::{env_bool, env_i32, env_str};
 
-static ALL: OnceLock<Config> = OnceLock::new();
+pub mod db;
+
+static CELL: OnceLock<Config> = OnceLock::new();
 
 pub struct Config {
     pub debug: bool,
@@ -52,7 +54,7 @@ pub struct Config {
 }
 
 pub fn get_or_init() -> &'static Config {
-    ALL.get_or_init(|| -> Config {
+    CELL.get_or_init(|| -> Config {
         dotenvy::dotenv().ok();
         Config {
             debug: !cfg!(debug_assertions) && !env_bool("debug"),

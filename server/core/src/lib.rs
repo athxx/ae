@@ -1,3 +1,4 @@
 pub mod common;
-pub mod prisma;
+pub mod db;
+pub mod model;
 pub mod service;
