@@ -6,6 +6,9 @@ edition = "2021"
 [dependencies]
 utils = { path = "../utils" }
 
+# outter
+tokio = { workspace = true }
+
 prisma-client-rust = { workspace = true, features = [
   "migrations",
   "sqlite",

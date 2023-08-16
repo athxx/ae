@@ -53,7 +53,7 @@ pub struct Config {
     pub search_url: String,
 }
 
-pub fn get_or_init() -> &'static Config {
+pub fn get_cfg() -> &'static Config {
     CELL.get_or_init(|| -> Config {
         dotenvy::dotenv().ok();
         Config {

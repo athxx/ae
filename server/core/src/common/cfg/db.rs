@@ -1,10 +1,8 @@
 use crate::db::PrismaClient;
-use std::sync::OnceLock;
+use tokio::sync::OnceCell;
 
-static DB: OnceLock<PrismaClient> = OnceLock::new();
+static DB: OnceCell<PrismaClient> = OnceCell::const_new();
 
 pub async fn get_or_init() -> &'static PrismaClient {
-    DB.get_or_init(|| -> PrismaClient {
-        PrismaClient::_builder().build().await.unwrap();
-    })
+    DB.get_or_init(|| async { PrismaClient::_builder().build().await.unwrap() }).await
 }
