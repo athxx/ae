@@ -15,7 +15,7 @@ use serde::{Deserialize, Serialize};
 
 #[tokio::main]
 async fn main() {
-    let cfg = core::common::cfg::get_or_init();
+    let cfg = core::common::cfg::get_cfg();
 
     // initialize tracing
     tracing_subscriber::fmt::init();
