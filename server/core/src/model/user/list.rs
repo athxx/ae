@@ -1,4 +1,5 @@
-use crate::db;
-pub async fn get_list() {
-    let dto = db::PrismaClient::_builder().build().await.unwrap();
-}
+pub async fn list() {}
+
+pub async fn list_by_id(ids: Vec<u64>) {}
+
+pub async fn get(id: u64) {}

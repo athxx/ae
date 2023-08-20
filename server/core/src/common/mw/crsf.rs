@@ -1,5 +1,1 @@
-
-
-fn crsf () {
-
-}
+async fn crsf() {}

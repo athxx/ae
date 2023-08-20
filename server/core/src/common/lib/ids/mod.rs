@@ -1,4 +1,4 @@
 // id generator
 
-fn mask() {}
-fn unmask() {}
+pub fn mask() {}
+pub fn unmask() {}

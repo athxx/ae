@@ -4,6 +4,7 @@ mod user;
 
 use axum::{
     http::{header, Method, StatusCode},
+    middleware,
     response::IntoResponse,
     routing::{get, post},
     Json, Router,
