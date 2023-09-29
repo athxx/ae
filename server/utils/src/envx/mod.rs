@@ -25,6 +25,10 @@ pub fn env_usize(key: &str) -> usize {
     var(key).unwrap_or("0".to_owned()).parse::<usize>().unwrap_or(0)
 }
 
+pub fn env_vec_string(key: &str) -> Vec<String> {
+    var(key).unwrap_or("".to_owned()).split(',').map(str::to_string).collect()
+}
+
 /// it just for get all prefix 'ox_' environment variables
 /// if necessary just change filter rules
 pub fn env_map() -> HashMap<String, String> {

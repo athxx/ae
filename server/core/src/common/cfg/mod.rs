@@ -1,5 +1,5 @@
 use std::sync::OnceLock;
-use utils::envx::{env_bool, env_i32, env_str};
+use utils::envx::{env_bool, env_i32, env_str, env_vec_string};
 
 pub mod db;
 
@@ -11,7 +11,7 @@ pub struct Config {
     pub port_api: String,
     pub port_auth: String,
     // REDIS
-    pub redis_url: String,
+    pub redis_url: Vec<String>,
 
     // DATABASE
     pub db_url: String,
@@ -62,7 +62,7 @@ pub fn get_cfg() -> &'static Config {
             port_auth: env_str("port_api"),
 
             // REDIS
-            redis_url: env_str("redis_url"),
+            redis_url: env_vec_string("redis_url"),
 
             // DATABASE
             db_url: env_str("db_url"),
