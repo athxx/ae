@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- import alpine.js and htmx -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@latest/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="../public/assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-left">
+          <span><i>this is a icon</i></span>
+          <img src="" alt="" />
+          <h3>OK Stream</h3>
+        </div>
+        <div class="nav-middle">
+          <a
+            href="/dfff"
+            hx-get="./about.html"
+            hx-target="body"
+            hx-swap="outerHTML"
+            >ssss</a
+          >
+
+          <button hx-get="./about.html" hx-indicator="#indicator">
+            Click Me!
+          </button>
+          <img
+            id="indicator"
+            class="htmx-indicator"
+            src="./../public/assets/images/loading.svg"
+          />
+        </div>
+        <div class="nav-right">
+          <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+        </div>
+      </nav>
+    </header>
+    <main class="container"></main>
+    <footer>
+      <script src="https://unpkg.com/htmx.org"></script>
+      <script defer src="https://unpkg.com/alpinejs"></script>
+      <script
+        defer
+        src="https://unpkg.com/zepto@1.2.0/dist/zepto.min.js"
+      ></script>
+    </footer>
+  </body>
+</html>
