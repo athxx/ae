@@ -26,3 +26,7 @@ serde_json = { workspace = true, default-features = true }
 serde_derive = { workspace = true }
 futures-util = { workspace = true, features = ["sink", "std"] }
 tower-http = { workspace = true, features = ["cors"] }
+
+aws-config = { workspace = true }
+aws-sdk-s3 = { workspace = true }
+redis = { workspace = true, features = ["r2d2", "cluster-async", "tokio-comp"] }

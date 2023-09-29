@@ -1,0 +1,12 @@
+# https://hub.docker.com/r/bitnami/redis-cluster
+# docker network create redis-cluster-network --driver bridge
+
+# curl -sSL https://raw.githubusercontent.com/bitnami/containers/main/bitnami/redis-cluster/docker-compose.yml > docker-compose.yml docker-compose up -d
+
+# redis-cluster:
+#   ...
+#   volumes:
+#     - /path/to/redis-cluster-persistence:/bitnami
+#   ...
+
+# docker run --name redis-cluster -e ALLOW_EMPTY_PASSWORD=yes ( -v /path/to/redis-cluster-persistence:/bitnami) bitnami/redis-cluster:latest

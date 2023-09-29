@@ -40,6 +40,7 @@ serde = "1"
 serde_json = "1"
 serde_derive = "1"
 scru128 = "*"
+elliptic-curve = "0.13.5" # ecc
 
 # database configuration
 prisma-client-rust = { git = "https://github.com/Brendonovich/prisma-client-rust", tag = "0.6.8" }
@@ -71,12 +72,18 @@ validator = "0"
 validator_derive = "0"
 
 # cache
-redis = { version = "0", features = ["tokio"] }
+redis = { version = "^0.23.3" } # tokio-comp, tokio-native-tls-comp
 cached = { version = "0", features = [
     "redis_store",
     "redis_async_std",
     "async",
 ] }
+
+# message queue
+tokio-nsq = "*" # I choose nsq instead of kafka, cause nsq already can fit for our bussiness
+
+# search
+meilisearch-sdk = "0.24.1"
 
 # time
 chrono = "0"
@@ -96,3 +103,7 @@ tracing-subscriber = "0"
 #futures-channel = "0.3.21"
 futures-util = "*"
 #tokio-tungstenite = "*"
+
+# s3
+aws-config = "*"
+aws-sdk-s3 = "*"
