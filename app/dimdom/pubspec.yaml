@@ -32,12 +32,12 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.5
-  flutter_map: ^5.0.0
+  flutter_map: ^6.0.0
   latlong2: ^0.9.0
   dio: ^5.3.2
   url_launcher: ^6.1.12
   flutter_svg: ^2.0.7
-  geolocator: ^9.0.2
+  geolocator: ^10.1.0
   qr_code_scanner: ^1.0.1
   qr_flutter: ^4.1.0
   flutter_barcode_scanner: ^2.0.0
@@ -45,11 +45,11 @@ dependencies:
   get: ^4.6.6
   shared_preferences: ^2.2.0
   image_picker: ^1.0.2
-  flutter_local_notifications: ^15.1.0+1
-  file_picker: ^5.3.3
+  flutter_local_notifications: ^16.1.0
+  file_picker: ^6.0.0
   sqflite: ^2.3.0
   sqflite_sqlcipher: ^2.2.0
-  flutter_secure_storage: ^8.0.0
+  flutter_secure_storage: ^9.0.0
   hive: ^2.2.3
   auto_size_text: ^3.0.0
   flutter_screenutil: ^5.8.4
@@ -72,6 +72,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.13.1
+  json_serializable: ^6.7.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -114,3 +116,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+# change launcher icon, best
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "lib/assets/img/launcher.png"
