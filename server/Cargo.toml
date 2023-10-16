@@ -107,3 +107,7 @@ futures-util = "*"
 # s3
 aws-config = "*"
 aws-sdk-s3 = "*"
+
+
+# tools 
+ravif = "*" # avif image format convert
