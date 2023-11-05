@@ -20,19 +20,23 @@ pub async fn router() -> Router {
                 .route("/public/home", post(user::set::create_user))
                 .route("/public/promote", post(user::set::create_user))
                 // non-permissions
-                .route("/login", get(auth::login))
-                .route("/register", get(auth::register))
+                .route("/sign/in", get(auth::sign_in))
+                .route("/sign/up", get(auth::sign_up))
                 .route("/captcha/sms", get(errors::ping))
                 .route("/captcha/email", get(errors::ping))
                 // test
                 .route("/c", post(user::set::create_user))
-                // websocket
+                // websocket & webtransport
                 .route("/ws/jwtToken", get(errors::ping))
-                // user
+                .route("/ws/:id", get(errors::ping))
+                // USER
                 .route("/user/info", get(errors::ping))
-                // geo
-                .route("/geo/users", get(errors::ping))
-                // shop
+                .route("/user/edit", get(errors::ping))
+                // USERS
+                .route("/users/list", get(errors::ping))
+                // GEO
+                .route("/users/geo", get(errors::ping))
+                // SHOP
                 .route("/shop", get(errors::ping))
                 // jobs
                 .route("/job/detail", get(errors::ping))
