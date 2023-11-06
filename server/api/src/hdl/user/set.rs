@@ -20,7 +20,7 @@ pub async fn create_user(
 
     // this will be converted into a JSON response
     // with a status code of `201 Created`
-    (StatusCode::CREATED, Json(user))
+    (StatusCode::OK, Json(user))
 }
 
 // the input to our `create_user` handler
