@@ -3,12 +3,14 @@ mod errors;
 mod user;
 
 use axum::{
-    http::{header, Method, StatusCode},
+    http::{header, HeaderValue, Method, StatusCode},
     middleware,
     response::IntoResponse,
     routing::{get, post},
     Json, Router,
 };
+
+use tower_http::cors::CorsLayer;
 
 pub async fn router() -> Router {
     Router::new()

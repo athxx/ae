@@ -31,3 +31,4 @@ tracing-subscriber = { workspace = true, features = [
 ] }
 log = { workspace = true, default-features = true }
 fast_log = { workspace = true, default-features = true }
+tower-http = { workspace = true, features = ["cors"] }
