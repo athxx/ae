@@ -68,3 +68,6 @@ Cargo.lock
 # frontend
 *lock.yaml
 *-lock.*
+
+# project automatic generate db.rs
+core/src/db.rs
