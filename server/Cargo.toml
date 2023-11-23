@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["api", "admin", "core", "utils", "prisma/prisma-cli"]
+members = ["api", "admin", "home", "web", "core", "utils", "prisma/prisma-cli"]
 
 [workspace.package]
 authors = ["Athan <athan.seal@gmail.com>"]
@@ -29,7 +29,10 @@ tokio = "*"
 dotenvy = "*"
 
 # template render for SSR
+### BENCHMARK  https://github.com/rosetta-rs/template-benchmarks-rs
 tera = "1"
+askama = "*"
+sailfish = "0.8.3"
 
 # encryption and serialization
 aes = "*"
@@ -39,7 +42,7 @@ rand = "0"
 serde = "1"
 serde_json = "1"
 serde_derive = "1"
-serde_with = "1"
+serde_with = "*"
 scru128 = "*"
 elliptic-curve = "0.13.5" # ecc
 
