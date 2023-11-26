@@ -9,7 +9,8 @@ pub struct Config {
     pub debug: bool,
     // PORTS
     pub port_api: String,
-    pub port_auth: String,
+    pub port_adm: String,
+    pub port_web: String,
     // REDIS
     pub redis_url: Vec<String>,
 
@@ -59,7 +60,8 @@ pub fn get_cfg() -> &'static Config {
         Config {
             debug: !cfg!(debug_assertions) && !env_bool("debug"),
             port_api: env_str("port_api"),
-            port_auth: env_str("port_api"),
+            port_adm: env_str("port_adm"),
+            port_web: env_str("port_web"),
 
             // REDIS
             redis_url: env_vec_string("redis_url"),

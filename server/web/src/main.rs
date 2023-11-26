@@ -22,14 +22,14 @@ async fn main() {
     let cfg = core::common::cfg::get_cfg();
     //fast_log::init(fast_log::Config::new().console().file("test.log").chan_len(Some(100000))).unwrap();
     // run our app with hyper
-    info!("LISTENING : {}", cfg.port_api);
-    axum::Server::bind(&cfg.port_api.parse().unwrap())
+    info!("LISTENING : {}", cfg.port_web);
+    axum::Server::bind(&cfg.port_web.parse().unwrap())
         .serve(hdl::router().await.into_make_service())
         .await
         .unwrap();
 }
 
-async fn tracing_init() {
+fn tracing_init() {
     // initialize tracing
     tracing_subscriber::fmt()
         // .without_time() // For early local development.
