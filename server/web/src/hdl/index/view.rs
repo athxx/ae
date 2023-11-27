@@ -4,6 +4,7 @@ use sailfish::TemplateOnce;
 #[template(path = "default/index.html")]
 pub struct IndexTemplate {
     title: String,
+    meta : Vec<String>
     pub messages: Vec<String>
 }
 
