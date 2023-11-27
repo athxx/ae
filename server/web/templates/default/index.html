@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title><%= title %></title>
     <!-- import alpine.js and htmx -->
     <link
       rel="stylesheet"
@@ -42,7 +42,9 @@
         </div>
       </nav>
     </header>
-    <main class="container"></main>
+    <main class="container">
+      <% include!("layouts/list.html"); %>
+    </main>
     <footer>
       <script src="https://unpkg.com/htmx.org"></script>
       <script defer src="https://unpkg.com/alpinejs"></script>
