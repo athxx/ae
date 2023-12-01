@@ -2,14 +2,20 @@ use sailfish::TemplateOnce;
 
 #[derive(TemplateOnce)]
 #[template(path = "default/index.html")]
-pub struct IndexTemplate {
+pub struct IndexTemplate<T> {
     title: String,
-    meta : Vec<String>
-    pub messages: Vec<String>
+    keywords: String,
+    description: String,
+    pub messages: Vec<T>,
 }
 
 // input message and render and return template
-pub fn index(title: String, msg: Vec<String>) -> String {
-    let template = IndexTemplate { title: title, messages: msg };
+pub fn index<T>(header: String, msg: Vec<T>) -> String {
+    let template = IndexTemplate {
+        title: header,
+        keywords: "".to_owned(),
+        description: "".to_owned(),
+        messages: msg,
+    };
     template.render_once().unwrap()
 }
