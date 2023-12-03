@@ -9,11 +9,11 @@ use axum::{
     Json, Router,
 };
 
+use log::info;
 use tower_http::{cors::CorsLayer, services::ServeDir};
 
-
-pub async fn router() -> Router {
-    let assets =  std::env::current_dir().unwrap();
+pub fn router() -> Router {
+    let assets = std::env::current_dir().unwrap();
     Router::new()
         // public
         .route("/", get(index::index))
@@ -26,11 +26,8 @@ pub async fn router() -> Router {
         .route("/sign/out", get(index::index))
         .route("/captcha/sms", get(errors::ping))
         .route("/captcha/email", get(errors::ping))
-        // test
-        .nest_service(
-            "/assets",
-            ServeDir::new(format!("{}/web/assets", assets.to_str().unwrap())),
-        )
+        // static asset files
+        .nest_service("/assets", ServeDir::new(format!("{}/templates/default/assets", assets.to_str().unwrap())))
 }
 
 // pub async fn routes() -> Router {

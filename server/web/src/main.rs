@@ -2,7 +2,6 @@
 #![allow(unused)]
 
 mod hdl;
-use core;
 
 use axum::{
     http::{header, Method, StatusCode},
@@ -19,14 +18,11 @@ use tracing_subscriber::EnvFilter;
 #[tokio::main]
 async fn main() {
     tracing_init();
-    let cfg = core::common::cfg::get_cfg();
     //fast_log::init(fast_log::Config::new().console().file("test.log").chan_len(Some(100000))).unwrap();
     // run our app with hyper
-    info!("LISTENING : {}", cfg.port_web);
-    axum::Server::bind(&cfg.port_web.parse().unwrap())
-        .serve(hdl::router().await.into_make_service())
-        .await
-        .unwrap();
+    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    info!("listening on {}", listener.local_addr().unwrap());
+    axum::serve(listener, hdl::router()).await.unwrap();
 }
 
 fn tracing_init() {
