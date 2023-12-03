@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
-    <meta name="description" content="<%= description %>" />
-    <meta name="keywords" content="<%= keywords %>" />
+    <title><%= base.title %></title>
+    <meta name="description" content="<%= base.description %>" />
+    <meta name="keywords" content="<%= base.keywords %>" />
     <!-- import alpine.js and htmx -->
     <link
       rel="stylesheet"
@@ -45,9 +45,7 @@
         </div>
       </nav>
     </header>
-    <main class="container">
-      <% include!("layouts/list.html"); %>
-    </main>
+    <main class="container"><% include!("layouts/list.html"); %></main>
     <footer>
       <script defer src="https://unpkg.com/htmx.org"></script>
       <script defer src="https://unpkg.com/alpinejs"></script>
