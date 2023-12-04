@@ -8,7 +8,7 @@
 ## TECH
 
 - AXUM
-- ASKAMA
+- SAILFISH
 - HTMX
 - TAILWIND
 
