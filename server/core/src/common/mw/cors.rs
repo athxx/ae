@@ -6,7 +6,7 @@ use axum::{
     Json, Router,
 };
 
-pub async fn cors<B>(req: Request<B>, next: Next<B>) -> Response {
+pub async fn cors(req: Request, next: Next) -> Response {
     let origin = req.headers().get("origin");
     match origin {
         Some(val) => {

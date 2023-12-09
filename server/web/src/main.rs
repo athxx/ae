@@ -21,6 +21,7 @@ async fn main() {
     //fast_log::init(fast_log::Config::new().console().file("test.log").chan_len(Some(100000))).unwrap();
     // run our app with hyper
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
+
     info!("listening on {}", listener.local_addr().unwrap());
     axum::serve(listener, hdl::router()).await.unwrap();
 }

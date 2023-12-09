@@ -1,19 +1,18 @@
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
-    <meta name="description" content="<%= description %>" />
-    <meta name="keywords" content="<%= keywords %>" />
-    <!-- import alpine.js and htmx -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@latest/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="manifest" href="/mainifest.json" />
-    <script defer src="https://unpkg.com/htmx.org"></script>
-      <script defer src="https://unpkg.com/alpinejs"></script>
-      <script
-        defer
-        src="https://unpkg.com/zepto@1.2.0/dist/zepto.min.js"></script>
-  </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%= base.title %>
+  </title>
+  <meta name="description" content="<%= base.description %>" />
+  <meta name="keywords" content="<%= base.keywords %>" />
+  <!-- import alpine.js and htmx -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@latest/css/bulma.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="manifest" href="/assets/manifest.json" />
+  <link rel="icon" href="/assets/cute-pirate.svg" type="image/svg+xml">
+  <script defer src="https://unpkg.com/htmx.org@latest"></script>
+  <script defer src="https://unpkg.com/alpinejs@latest"></script>
+  <script defer src="https://unpkg.com/zepto@1.2.0/dist/zepto.min.js"></script>
+  <script defer src="https://unpkg.com/htmx.org/dist/ext/preload.js"></script>
+</head>

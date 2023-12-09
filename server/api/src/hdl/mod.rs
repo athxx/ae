@@ -12,7 +12,7 @@ use axum::{
 
 use tower_http::cors::CorsLayer;
 
-pub async fn router() -> Router {
+pub fn router() -> Router {
     Router::new()
         .nest(
             "/api",

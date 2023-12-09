@@ -21,11 +21,10 @@ async fn main() {
     let cfg = core::common::cfg::get_cfg();
     //fast_log::init(fast_log::Config::new().console().file("test.log").chan_len(Some(100000))).unwrap();
     // run our app with hyper
-    info!("LISTENING : {}", cfg.port_api);
-    axum::Server::bind(&cfg.port_api.parse().unwrap())
-        .serve(hdl::router().await.into_make_service())
-        .await
-        .unwrap();
+    let listener = tokio::net::TcpListener::bind(cfg.port_api).await.context("Failed to start tcp listener")?;
+
+    info!("LISTENING ON : {}", cfg.port_api);
+    axum::serve(listener, hdl::router()).await.context("Failed to start server")?;
 }
 
 async fn tracing_init() {
