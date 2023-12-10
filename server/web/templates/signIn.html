@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include!("base/head.html"); %>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-left">
+          <span><i>this is a icon</i></span>
+          <img src="" alt="" />
+          <h3>OK Stream</h3>
+        </div>
+        <div class="nav-middle">
+          <a
+            href="/about.html"
+            hx-get="/about.html"
+            hx-target="body"
+            hx-swap="outerHTML"
+            >ssss</a
+          >
+
+          <button hx-get="./about.html" hx-indicator="#indicator">
+            Click Me!
+          </button>
+          <img
+            id="indicator"
+            class="htmx-indicator"
+            src="/assets/loading.svg"
+          />
+        </div>
+        <div class="nav-right">
+          <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+        </div>
+      </nav>
+    </header>
+    <main class="container"><% include!("layouts/sidebar.html"); %></main>
+  </body>
+</html>

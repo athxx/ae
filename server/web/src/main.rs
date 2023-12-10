@@ -1,7 +1,9 @@
 #![allow(dead_code)]
 #![allow(unused)]
 
-mod hdl;
+mod common;
+mod handlers;
+mod libraries;
 
 use axum::{
     http::{header, Method, StatusCode},
@@ -23,7 +25,7 @@ async fn main() {
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
 
     info!("listening on {}", listener.local_addr().unwrap());
-    axum::serve(listener, hdl::router()).await.unwrap();
+    axum::serve(listener, handlers::router()).await.unwrap();
 }
 
 fn tracing_init() {

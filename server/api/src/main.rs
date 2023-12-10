@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 #![allow(unused)]
 
-mod hdl;
+mod handlers;
 
 use axum::{
     http::{header, Method, StatusCode},
@@ -24,7 +24,7 @@ async fn main() {
     let listener = tokio::net::TcpListener::bind(cfg.port_api).await.context("Failed to start tcp listener")?;
 
     info!("LISTENING ON : {}", cfg.port_api);
-    axum::serve(listener, hdl::router()).await.context("Failed to start server")?;
+    axum::serve(listener, handlers::router()).await.context("Failed to start server")?;
 }
 
 async fn tracing_init() {

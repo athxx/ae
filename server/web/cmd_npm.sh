@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pnpm dlx tailwindcss -i assets/tailwind.css -o assets/main.css --watch
+pnpm dlx tailwindcss -i templates/assets/tailwind.css -o templates/assets/main.css --watch
