@@ -11,6 +11,7 @@
     "tailwindcss": "^3.3.6"
   },
   "scripts": {
-    "dev" : "pnpx tailwindcss -i templates/assets/tailwind.css -o templates/assets/main.css --watch"
+    "dev" : "pnpx tailwindcss -i templates/assets/tailwind.css -o templates/assets/main.css --minify --watch",
+    "prd" : "pnpx tailwindcss -i templates/assets/tailwind.css -o templates/assets/main.css --minify"
   }
 }
