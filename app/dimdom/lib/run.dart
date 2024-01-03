@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:dimdom/core/services/services.dart';
-import 'package:dimdom/core/store/store.dart';
-import 'package:dimdom/core/utils/utils.dart';
+import 'package:blabla/core/services/services.dart';
+import 'package:blabla/core/store/store.dart';
+import 'package:blabla/core/utils/utils.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

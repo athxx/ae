@@ -1,4 +1,4 @@
-import 'package:dimdom/core/lang/en.dart';
+import 'package:blabla/core/lang/en.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
