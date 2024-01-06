@@ -55,3 +55,29 @@ window.addEventListener("resize", () => {
 if (window.innerWidth < 768) {
   sideBar.classList.add("hide");
 }
+
+
+// mobile 沉浸式导航， 使用jquery实现
+// https://www.cnblogs.com/dravenT1/p/9155849.html
+/*评论模块的滚动隐藏效果*/
+var windowTop=0;//初始话可视区域距离页面顶端的距离
+$(window).scroll(function() {
+    var scrolls = $(this).scrollTop();//获取当前可视区域距离页面顶端的距离
+    if(scrolls>=windowTop){//当scrolls>windowTop时，表示页面在向下滑动
+        //需要执行隐藏导航的操作
+        if (!$('.more-comment-list-block').hasClass('fadeOutUp')) {
+            $('.more-comment-list-block').addClass('animated fadeOutUp');
+            $('.more-comment-list-block').removeClass('fadeInDown');
+            $('.container').css('margin-top','45px');
+        }
+        windowTop=scrolls;
+    }else{
+        //需要执行显示导航动画操作
+        if (!$('.more-comment-list-block').hasClass('fadeInDown')) {
+            $('.more-comment-list-block').addClass('animated fadeInDown');
+            $('.more-comment-list-block').removeClass('fadeOutUp');
+            $('.container').css('margin-top','148px');
+        }
+        windowTop=scrolls;
+    }
+});
