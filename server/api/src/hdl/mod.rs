@@ -10,7 +10,8 @@ use axum::{
     Json, Router,
 };
 
-use tower_http::cors::CorsLayer;
+use tower_http::{trace::TraceLayer};
+
 
 pub fn router() -> Router {
     Router::new()
@@ -18,6 +19,7 @@ pub fn router() -> Router {
             "/api",
             Router::new()
                 .route("/ping", get(errors::ping))
+                // sign
                 // public
                 .route("/public/home", post(user::set::create_user))
                 .route("/public/promote", post(user::set::create_user))
@@ -49,7 +51,8 @@ pub fn router() -> Router {
                 // news
                 .route("/news", get(errors::ping))
                 // im
-                .route("/im", get(errors::ping)),
+                .route("/im", get(errors::ping))
+                .layer(TraceLayer::new_for_http()),
         )
         .fallback(errors::not_found)
 }

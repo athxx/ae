@@ -1,4 +1,4 @@
-use core::{common::cfg::db::get_db, db};
+use core::{common::cfg::data::get_db, db};
 
 use axum::{response::IntoResponse, Json};
 

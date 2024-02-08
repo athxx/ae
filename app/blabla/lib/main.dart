@@ -14,18 +14,20 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "",
+      title: 'Blabla',
+      enableLog: true,
+      debugShowCheckedModeBanner: false,
       translations: Messages(),
-      locale: window.locale,
       fallbackLocale: Locale('en', 'US'),
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      unknownRoute: AppPages.unknownRoute,
+      locale: TranslationService.locale,
       defaultTransition: Transition.rightToLeft,
-      debugShowCheckedModeBanner: false,
       builder: EasyLoading.init(),
       theme: ThemeData().copyWith(
         brightness: Brightness.light,
-        primaryColor: Colours.app_main,
+        primaryColor: Color.app_main,
       ),
     );
   }

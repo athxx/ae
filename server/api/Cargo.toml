@@ -1,7 +1,16 @@
 [package]
 name = "api"
-version = "0.1.0"
-edition = "2021"
+authors.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+publish.workspace = true
+repository.workspace = true
+version.workspace = true
+keywords.workspace = true
+description.workspace = true
+documentation.workspace = true
+readme.workspace = true
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -10,7 +19,7 @@ core = { path = "../core" }
 
 axum = { workspace = true, features = ["multipart"] }
 axum-server = { workspace = true, features = ["tls-rustls"] }
-axum-extra = { workspace = true, features = ["spa"] }
+axum-extra = { workspace = true, features = ["cookie"] }
 tokio = { workspace = true, features = [
     "rt-multi-thread",
     "macros",

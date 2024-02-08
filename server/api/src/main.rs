@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 #![allow(unused)]
 
-mod handlers;
+mod hdl;
 
 use axum::{
     http::{header, Method, StatusCode},
@@ -19,7 +19,6 @@ use tracing_subscriber::EnvFilter;
 async fn main() {
     tracing_init();
     let cfg = core::common::cfg::get_cfg();
-    //fast_log::init(fast_log::Config::new().console().file("test.log").chan_len(Some(100000))).unwrap();
     // run our app with hyper
     let listener = tokio::net::TcpListener::bind(cfg.port_api).await.context("Failed to start tcp listener")?;
 
