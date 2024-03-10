@@ -23,7 +23,14 @@ lto = true
 opt-level = "z"   # Optimize for size.
 panic = 'abort'
 strip = true
+rustflags = ["-Z", "threads=8"]
 # strip = "symbols" # none(false) debuginfo symbols(true).
+
+[workspace.dev-dependencies]
+clickhouse = { version = "0.11.6", features = ["test-util"] }
+# httpc-test = "0.1"
+# serial_test = "2"
+
 
 [workspace.dependencies]
 # base
@@ -61,6 +68,7 @@ prisma-client-rust-cli = { git = "https://github.com/Brendonovich/prisma-client-
     # "mongodb",
     # "mssql",
 ] }
+clickhouse = "0.11.6"
 
 # tools
 reqwest = "*"
@@ -92,7 +100,7 @@ cached = { version = "0", features = [
 moka = "*"
 
 # message queue
-tokio-ns = "0.14.0" # I choose nsq instead of kafka, cause nsq already can fit for our bussiness
+tokio-nsq = "0.14.0" # I choose nsq instead of kafka, cause nsq already can fit for our bussiness
 
 # search
 meilisearch-sdk = "0.24.1"
@@ -127,8 +135,3 @@ ravif = "*"  # avif image format convert
 hmac = "*"
 sha2 = "*"
 base64 = "*"
-
-
-# [workspace.dev-dependencies]
-# httpc-test = "0.1"
-# serial_test = "2"
