@@ -23,7 +23,7 @@ lto = true
 opt-level = "z"   # Optimize for size.
 panic = 'abort'
 strip = true
-rustflags = ["-Z", "threads=8"]
+# rustflags = ["-Z", "threads=8"]
 # strip = "symbols" # none(false) debuginfo symbols(true).
 
 [workspace.dev-dependencies]
@@ -86,11 +86,11 @@ futures = "0"
 lettre = "*"                                        # send email
 
 # validator
-validator = "0.16.1"
-validator_derive = "0.16.0"
+validator = "0.17.0"
+validator_derive = "0.17.0"
 
 # cache
-redis = { version = "^0.24.0" } # tokio-comp, tokio-native-tls-comp
+redis = { version = "^0.25.1" } # tokio-comp, tokio-native-tls-comp
 cached = { version = "0", features = [
     "redis_store",
     "redis_async_std",
@@ -103,7 +103,7 @@ moka = "*"
 tokio-nsq = "0.14.0" # I choose nsq instead of kafka, cause nsq already can fit for our bussiness
 
 # search
-meilisearch-sdk = "0.24.1"
+meilisearch-sdk = "0.25.0"
 
 # time
 chrono = "0.4.33"
