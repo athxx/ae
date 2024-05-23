@@ -6,11 +6,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-axum = { version = "0.7.4", features = ["multipart", "ws"] }
-axum-extra = { version = "0.9.2" }
-tower-http = { version = "0.5.0", features = ["cors", "fs"] }
+axum = { version = "0.7.5", features = ["multipart", "ws"] }
+axum-extra = { version = "0.9.3" }
+tower-http = { version = "0.5.2", features = ["cors", "fs"] }
 #axum-tungstenite="0"
-tokio = { version = "1.36.0", features = [
+tokio = { version = "1.37.0", features = [
     "rt-multi-thread",
     "macros",
     "parking_lot",
@@ -18,22 +18,22 @@ tokio = { version = "1.36.0", features = [
 ] }
 dotenvy = "0.15.7"
 
-serde = { version = "1", features = ["derive"] }
-serde_json = "1"
-serde_derive = "1"
-serde_with = "*"
+serde = { version = "1.0.202", features = ["derive"] }
+serde_json = "1.0.117"
+serde_derive = "1.0.202"
+serde_with = "3.8.1"
 
 sailfish = "0.8.3"
 #
-tracing = "0"
-tracing-appender = "0"
-tracing-subscriber = { version = "*", features = [
+tracing = "0.1.40"
+tracing-appender = "0.2.3"
+tracing-subscriber = { version = "0.3.18", features = [
     "json",
     "env-filter",
     "local-time",
     "registry",
 ] }
-log = "*"
-fast_log = { version = "*", features = ["lz4", "zip", "gzip"] }
+log = "0.4.21"
+fast_log = { version = "1.6.16", features = ["lz4", "zip", "gzip"] }
 
-lettre = "*" # email send
+lettre = "0.11.7" # email send

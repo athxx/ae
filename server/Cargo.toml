@@ -103,13 +103,13 @@ moka = "*"
 tokio-nsq = "0.14.0" # I choose nsq instead of kafka, cause nsq already can fit for our bussiness
 
 # search
-meilisearch-sdk = "0.25.0"
+meilisearch-sdk = "0.26.1"
 
 # time
 chrono = "0.4.33"
-speedate = "0.13.0"
-delay_timer = "0.11.5"
-time = "0.3.34"
+speedate = "0.14.0"
+delay_timer = "0.11.6"
+time = "0.3.36"
 
 # log
 log = "*"
