@@ -7,7 +7,7 @@ pub struct BaseTpl {
 }
 
 #[derive(TemplateOnce)]
-#[template(path = "index.html")]
+#[template(path = "index.stpl")]
 pub struct IndexTemplate {
     pub base: BaseTpl,
     pub messages: Vec<String>,

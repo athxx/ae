@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<% include!("base/head.html"); %>
+<% include!("base/head.stpl"); %>
 
     <body>
-        <% include!("base/aside.html"); %>
+        <% include!("base/aside.stpl"); %>
 
         <section class="content">
-            <% include!("base/header.html"); %>
+            <% include!("base/header.stpl"); %>
            
         </section>
 
