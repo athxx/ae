@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= base.title %></title>
+  <meta name="description" content="<%= base.description %>" />
+  <meta name="keywords" content="<%= base.keywords %>" />
+  <!-- import alpine.js and htmx -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@latest/css/bulma.min.css" />
+  <link rel="stylesheet" href="/assets/css/normalize.css">
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="manifest" href="/assets/manifest.json" />
+  <link rel="icon" href="/assets/cute-pirate.svg" type="image/svg+xml">
+  <script defer src="https://unpkg.com/htmx.org@latest"></script>
+  <script defer src="https://unpkg.com/htmx.org@latest/dist/ext/preload.js"></script>
+  <script async src="https://unpkg.com/alpinejs@latest"></script>
+  <script async src="https://unpkg.com/zepto@latest/dist/zepto.min.js"></script>
+  <script async src="/assets/app.js"></script>
+  <!-- defer using -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!--  Google Seo   -->
+  <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "Recipe",
+            "name": "谷歌seo之结构化数据标记重要性<%= base.title %>",
+            "author": {
+                "@type": "Person<%= base.title %>",
+                "name": "Mary Stone<%= base.title %>"
+            },
+            "datePublished": "2018-03-10<%= base.title %>",
+            "description": "Google搜索中结构化数据标记是一种可以通过向网页添加特定的标记<%= base.title %>",
+            "prepTime": "PT20M<%= base.title %>"
+        }
+    </script>
+    <!--    TODO og 协议,后续优化-->
+    <meta property="og:site_name" content="谷歌seo优化"/>
+</head>
