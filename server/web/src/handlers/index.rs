@@ -14,7 +14,7 @@ pub fn render(s: String) -> impl IntoResponse {
 }
 
 pub async fn index() -> impl IntoResponse {
-    render(view::index("23343434".to_owned(), vec![String::from("foo"), String::from("bar")]))
+    render(view::index("This my first site".to_owned(), vec![String::from("foo"), String::from("bar")]))
 }
 
 pub async fn topic() -> &'static str {

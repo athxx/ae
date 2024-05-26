@@ -8,7 +8,6 @@
   <meta name="keywords" content="<%= base.keywords %>" />
   <!-- import alpine.js and htmx -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@latest/css/bulma.min.css" />
-  <link rel="stylesheet" href="/assets/css/normalize.css">
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="manifest" href="/assets/manifest.json" />
   <link rel="icon" href="/assets/cute-pirate.svg" type="image/svg+xml">
@@ -37,3 +36,4 @@
     <!--    TODO og 协议,后续优化-->
     <meta property="og:site_name" content="谷歌seo优化"/>
 </head>
+ <body>

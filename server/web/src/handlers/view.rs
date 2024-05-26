@@ -8,6 +8,7 @@ pub struct BaseTpl {
 
 #[derive(TemplateOnce)]
 #[template(path = "index.stpl")]
+#[template(rm_whitespace = true)]
 pub struct IndexTemplate {
     pub base: BaseTpl,
     pub messages: Vec<String>,
@@ -15,7 +16,7 @@ pub struct IndexTemplate {
 
 // input message and render and return template
 pub fn index(headline: String, msg: Vec<String>) -> String {
-    let template = IndexTemplate {
+    let tpl = IndexTemplate {
         base: BaseTpl {
             title: headline,
             keywords: "this is a keyword".to_owned(),
@@ -24,5 +25,5 @@ pub fn index(headline: String, msg: Vec<String>) -> String {
 
         messages: msg,
     };
-    template.render_once().unwrap()
+    tpl.render_once().unwrap()
 }
