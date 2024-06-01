@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["api", "admin", "home", "web", "core", "utils", "prisma/prisma-cli", "shop"]
+members = ["api", "admin", "home", "web", "core", "utils", "prisma/prisma-cli", "shop", "pay"]
 
 [workspace.package]
 authors = ["Athan <athan.seal@gmail.com>"]

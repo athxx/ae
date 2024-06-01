@@ -1,0 +1,17 @@
+{
+  "name": "blabla",
+  "author":"AthanX",
+  "version": "1.0.0",
+  "description":"",
+  "keywords":["forum","bbs"],
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "tailwindcss": "^3.3.6"
+  },
+  "scripts": {
+    "dev" : "pnpx tailwindcss -i templates/assets/tailwind.css -o templates/assets/main.css --minify --watch",
+    "prd" : "pnpx tailwindcss -i templates/assets/tailwind.css -o templates/assets/main.css --minify"
+  }
+}

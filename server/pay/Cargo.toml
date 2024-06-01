@@ -1,5 +1,5 @@
 [package]
-name = "shop"
+name = "pay"
 authors.workspace = true
 edition.workspace = true
 homepage.workspace = true

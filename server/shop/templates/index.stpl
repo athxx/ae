@@ -1,0 +1,24 @@
+<% include!("layouts/_head.stpl"); %>
+
+   
+        <% include!("layouts/_aside.stpl"); %>
+
+        <section class="content">
+            <% include!("layouts/_topbar.stpl"); %>
+           
+        </section>
+
+        <% if messages.is_empty() { %>
+        <div>No messages</div>
+        <% } %>
+
+        <% for msg in &messages { %>
+            <div><%= msg %></div>
+        <% } %>
+
+        <% for (i, msg) in messages.iter().enumerate() { %>
+            <div><%= i %>: <%= msg %></div>
+        <% } %>
+
+
+<% include!("layouts/_foot.stpl"); %>

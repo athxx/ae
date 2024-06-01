@@ -1,15 +1,39 @@
 [package]
-name = "shop"
-authors.workspace = true
-edition.workspace = true
-homepage.workspace = true
-license.workspace = true
-publish.workspace = true
-repository.workspace = true
-version.workspace = true
-keywords.workspace = true
-description.workspace = true
-documentation.workspace = true
-readme.workspace = true
+name = "web"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+axum = { version = "0.7.5", features = ["multipart", "ws"] }
+axum-extra = { version = "0.9.3" }
+tower-http = { version = "0.5.2", features = ["cors", "fs"] }
+#axum-tungstenite="0"
+tokio = { version = "1.37.0", features = [
+    "rt-multi-thread",
+    "macros",
+    "parking_lot",
+    "signal",
+] }
+dotenvy = "0.15.7"
+
+serde = { version = "1.0.202", features = ["derive"] }
+serde_json = "1.0.117"
+serde_derive = "1.0.202"
+serde_with = "3.8.1"
+
+sailfish = "0.8.3"
+#
+tracing = "0.1.40"
+tracing-appender = "0.2.3"
+tracing-subscriber = { version = "0.3.18", features = [
+    "json",
+    "env-filter",
+    "local-time",
+    "registry",
+] }
+log = "0.4.21"
+fast_log = { version = "1.6.16", features = ["lz4", "zip", "gzip"] }
+
+lettre = "0.11.7" # email send
