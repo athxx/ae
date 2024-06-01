@@ -1,5 +1,5 @@
 [package]
-name = "redorm"
+name = "shop"
 authors.workspace = true
 edition.workspace = true
 homepage.workspace = true
@@ -11,7 +11,5 @@ keywords.workspace = true
 description.workspace = true
 documentation.workspace = true
 readme.workspace = true
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]

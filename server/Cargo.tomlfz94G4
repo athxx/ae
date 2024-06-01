@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["api", "admin", "home", "web", "core", "utils", "prisma/prisma-cli", "shop"]
+members = ["api", "admin", "home", "web", "core", "utils", "prisma/prisma-cli", "shop", "dao"]
 
 [workspace.package]
 authors = ["Athan <athan.seal@gmail.com>"]
@@ -12,7 +12,7 @@ repository = ""
 version = "0.1.0"
 keywords = ["example", "cargo", "mastering"]
 description = "amigo description"
-documentation = ""
+documentation = "https://docs.rs/amigo"
 readme = "README.md"
 
 

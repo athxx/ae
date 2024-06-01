@@ -5,7 +5,6 @@ pub mod base64;
 pub mod blake3;
 pub mod ecc;
 pub mod hashids;
-pub mod md5;
 pub mod nanoid;
 pub mod otp;
 pub mod rsa;
