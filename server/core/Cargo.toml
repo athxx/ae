@@ -9,16 +9,6 @@ utils = { path = "../utils" }
 # outter
 tokio = { workspace = true }
 
-prisma-client-rust = { workspace = true, features = [
-  "migrations",
-  "postgresql",
-  # "sqlite",
-  # "mysql",
-  # "mongodb",
-  # "mssql",
-] }
-
-
 axum = { workspace = true }
 dotenvy = { workspace = true }
 serde = { workspace = true, features = ["derive"] }

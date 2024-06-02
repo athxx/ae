@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["api", "admin", "home", "web", "core", "utils", "prisma/prisma-cli", "shop", "pay"]
+members = ["api", "admin", "home", "web", "core", "utils", "shop", "pay", "im"]
 
 [workspace.package]
 authors = ["Athan <athan.seal@gmail.com>"]
@@ -59,15 +59,6 @@ scru128 = "*"
 elliptic-curve = "0.13.8" # ecc
 
 # database configuration
-prisma-client-rust = { git = "https://github.com/Brendonovich/prisma-client-rust", tag = "0.6.11" }
-prisma-client-rust-cli = { git = "https://github.com/Brendonovich/prisma-client-rust", tag = "0.6.11", features = [
-    "migrations",
-    # "sqlite",
-    "postgresql",
-    "mysql",
-    # "mongodb",
-    # "mssql",
-] }
 clickhouse = "0.11.6"
 
 # tools
