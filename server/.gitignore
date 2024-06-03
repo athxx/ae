@@ -71,6 +71,3 @@ Cargo.lock
 
 # develop env file
 .env
-
-# project automatic generate db.rs
-core/src/db.rs

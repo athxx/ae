@@ -1,5 +1,5 @@
 [package]
-name = "core"
+name = "center"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,6 +8,7 @@ utils = { path = "../utils" }
 
 # outter
 tokio = { workspace = true }
+
 
 axum = { workspace = true }
 dotenvy = { workspace = true }

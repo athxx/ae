@@ -10,8 +10,7 @@ use axum::{
     Json, Router,
 };
 
-use tower_http::{trace::TraceLayer};
-
+use tower_http::trace::TraceLayer;
 
 pub fn router() -> Router {
     Router::new()
@@ -54,7 +53,7 @@ pub fn router() -> Router {
                 .route("/im", get(errors::ping))
                 .layer(TraceLayer::new_for_http()),
         )
-        .fallback(errors::not_found)
+        .fallback(errors::page_not_found)
 }
 
 // pub async fn routes() -> Router {

@@ -12,18 +12,16 @@ use axum::{
 
 use serde::{Deserialize, Serialize};
 
-use tracing::{error, info, warn};
 use tracing_subscriber::EnvFilter;
 
 #[tokio::main]
 async fn main() {
     tracing_init();
-    let cfg = core::common::cfg::get_cfg();
+    let cfg = center::common::cfg::get_cfg();
     // run our app with hyper
-    let listener = tokio::net::TcpListener::bind(cfg.port_api).await.context("Failed to start tcp listener")?;
-
-    info!("LISTENING ON : {}", cfg.port_api);
-    axum::serve(listener, handlers::router()).await.context("Failed to start server")?;
+    let listener = tokio::net::TcpListener::bind(&cfg.port_api).await.unwrap();
+    tracing::info!("sdfdf{}", "dddd");
+    axum::serve(listener, hdl::router()).await.unwrap();
 }
 
 async fn tracing_init() {

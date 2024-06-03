@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["api", "admin", "home", "web", "core", "utils", "shop", "pay", "im"]
+members = ["api", "admin", "home", "web", "center", "utils", "shop", "pay", "im"]
 
 [workspace.package]
 authors = ["Athan <athan.seal@gmail.com>"]
@@ -62,19 +62,19 @@ elliptic-curve = "0.13.8" # ecc
 clickhouse = "0.11.6"
 
 # tools
-reqwest = "*"
-captcha_rust = "*"
-captcha-rs = "0"
+reqwest = "0.12.4"
+captcha_rust = "0.1.3"
+captcha-rs = "0.2.10"
 user-agent-parser = "0"
 headers = "0"
 jsonwebtoken = "*"
 once_cell = "1"
 bytes = "1"
-tower = { version = "0" }                           #  features = ["fs"]
-tower-http = { version = "0", features = ["cors"] }
+tower = { version = "0.4.13" }                           #  features = ["fs"]
+tower-http = { version = "0.5.2", features = ["cors"] }
 xdb = "*"                                           # https://github.com/lionsoul2014/ip2region
-futures = "0"
-lettre = "*"                                        # send email
+futures = "0.3.30"
+lettre = "0.11.7"                                        # send email
 
 # validator
 validator = "0.18.1"

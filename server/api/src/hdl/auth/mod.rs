@@ -1,4 +1,4 @@
-use core::{common::cfg::data::get_db, db};
+use center::common::cfg::db::get_db;
 
 use axum::{response::IntoResponse, Json};
 
@@ -8,9 +8,10 @@ pub async fn sign_in() -> &'static str {
 
 pub async fn sign_up() -> impl IntoResponse {
     let clt = get_db().await;
-    let user = clt.user().find_unique(db::user::uid::equals(1)).exec().await;
+    // let user = clt.user().find_unique(db::user::uid::equals(1)).exec().await;
 
-    Json::from(user)
+    // Json::from(user)
+    ""
 }
 
 // TODO SMS
