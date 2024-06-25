@@ -24,7 +24,7 @@ pub async fn page_not_found(method: Method, headers: header::HeaderMap) -> impl 
     if let Some(header_value) = headers.get("accept") {
         if let Ok(accept_str) = header_value.to_str() {
             if accept_str.contains("application/json") {
-                return (StatusCode::NOT_FOUND, [(header::CONTENT_TYPE, "application/json")], r#"{"code":404,"message":"Not Found"}"#);
+                return (StatusCode::NOT_FOUND, [(header::CONTENT_TYPE, "application/json")], r#"{"code":404,"msg":"Not Found"}"#);
             }
         }
     }
